@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta name="lineshop-mode" content="static">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LineShop</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b74c9'/%3E%3Cpath d='M8 21l5-6 4 3 7-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/app.css">
+<script>
+  try { var s = JSON.parse(localStorage.getItem('lineshop.settings.v1') || '{}'); if (s.theme === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+</script>
+</head>
+<body>
+<header id="top">
+  <div id="snapbar" hidden></div>
+  <div class="row1">
+    <a class="logo" href="#/" aria-label="LineShop home"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><defs><linearGradient id="lgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8def"/><stop offset="1" stop-color="#4fbf8a"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lgm)"/><path d="M7 21l6-7 4 3 8-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>LineShop</span></a>
+    <div class="search">
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search team, city or game" aria-label="Search games">
+      <kbd class="slash">/</kbd>
+      <div id="sr" class="sr" hidden></div>
+    </div>
+    <span class="sp"></span>
+    <div class="seg" id="win" role="group" aria-label="Time window">
+      <button data-win="soon" title="Starting within 2 hours">Starting soon</button><button data-win="today">Today</button><button data-win="24h">Next 24 h</button><button data-win="all">All</button>
+    </div>
+    <div class="seg" id="viewseg" role="group" aria-label="View"><button data-view="board">Board</button><button data-view="grid">Grid</button></div>
+    <div class="seg" id="disp" role="group" aria-label="Price display"><button data-disp="odds">Odds</button><button data-disp="pct">%</button><button data-disp="both">Both</button></div>
+    <button id="theme" class="ib" title="Toggle light and dark"></button>
+    <button id="srcbtn" class="srcbtn" title="Source health"><span id="dots"></span><span class="srct">Sources</span></button>
+  </div>
+  <div class="row2">
+    <nav id="leagues" aria-label="Leagues"></nav>
+    <span class="sp"></span>
+    <div class="seg" id="mkt" role="group" aria-label="Market"><button data-mkt="spread">Spread</button><button data-mkt="moneyline">ML</button><button data-mkt="total">Total</button><button data-mkt="all">All</button></div>
+    <button id="booksbtn" class="chipb" title="Choose which book columns to show">Books</button>
+    <button id="helpbtn" class="ib sm" title="Keyboard shortcuts (?)">?</button>
+  </div>
+</header>
+<div id="banner" hidden>Reconnecting&hellip; showing the last data received.</div>
+<main id="main"></main>
+<footer id="legend"><span><i class="lg-b"></i>best for the bettor</span><span><i class="lg-n"></i>near best</span><span><i class="lg-s"></i>stale quote</span><span><i class="lg-a"></i>alt line</span><span class="kinds"><b class="bk bk-book" style="--bh:#8d95a3">BK</b> sportsbook <b class="bk bk-pred" style="--bh:var(--pm)"><b>%</b>PM</b> prediction market</span><span class="lg-m">Line alone = −110</span><span class="lg-off">⚠ off-market <small>(far from the line, never best)</small></span><span class="note">Green always means better for the bettor. Prices are shown pregame only.</span></footer>
+<div id="scrim" hidden></div>
+<aside id="drawer" hidden aria-label="Game detail"></aside>
+<div id="pop" hidden></div>
+<div id="help" hidden></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
